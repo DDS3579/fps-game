@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D FPS Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <!-- Main game container -->
+    <div id="game-container"></div>
+
+    <!-- Crosshair -->
+    <div id="crosshair">+</div>
+
+    <!-- HUD -->
+    <div id="hud">
+        <div id="health">Health: 100</div>
+        <div id="score">Score: 0</div>
+    </div>
+
+    <!-- Difficulty Selection Screen -->
+    <div id="difficulty-select">
+        <div class="difficulty-content">
+            <h1>3D FPS Game</h1>
+            <h2>Select Difficulty</h2>
+            <div class="button-container">
+                <button onmousedown="setDifficulty('easy')">Easy</button>
+                <button onmousedown="setDifficulty('medium')">Medium</button>
+                <button onmousedown="setDifficulty('hard')">Hard</button>
+            </div>
+            <div class="instructions">
+                <p>Controls:</p>
+                <ul>
+                    <li>WASD - Move</li>
+                    <li>Mouse - Look around</li>
+                    <li>Left Click - Shoot</li>
+                    <li>ESC - Release mouse</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen (hidden by default) -->
+    <div id="game-over" style="display: none;">
+        <h1>Game Over</h1>
+        <p>Final Score: <span id="final-score">0</span></p>
+        <button onmousedown="restartGame()">Play Again</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.150.1/three.min.js"></script>
+    <script src="logic.js"></script>
+</body>
+</html>
